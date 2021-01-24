@@ -88,7 +88,8 @@ spec:
         - name: {{ include "clickhouse.fullname" . }}-metrica
           mountPath: /etc/clickhouse-server/metrica.d
         - name: {{ include "clickhouse.fullname" . }}-users
-          mountPath: /etc/clickhouse-server/users.d
+          mountPath: /etc/clickhouse-server/users.xml
+          subPath: users.xml
         securityContext:
           privileged: true
           runAsUser: 0
